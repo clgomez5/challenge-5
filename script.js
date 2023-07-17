@@ -1,3 +1,49 @@
+
+var hours = [
+  '9AM',
+  '10AM',
+  '11AM',
+  '12PM',
+  '1PM',
+  '2PM',
+  '3PM',
+  '4PM',
+  '5PM',
+];
+
+var rootEl = $('#root');
+
+var timeBlockEl = $('<div>'); 
+var textAreaEl = $('<textarea>');
+var buttonEl = $('<button>');
+
+timeBlockEl.text(hours);
+
+timeBlockEl.addClass('col-2 col-md-1 hour text-center py-3');
+textAreaEl.addClass("col-8 col-md-10 description border-top: 1px solid white");
+textAreaEl.css('background', 'transparent','padding', '10px');
+buttonEl.addClass("col-2 col-md-1");
+buttonEl.css('border-left', '1px solid black');
+buttonEl.css('border-top-right-radius', '15px');
+buttonEl.css('border-bottom-right-radius', '15px'); 
+buttonEl.css('background-color', '#06aed5'); 
+
+rootEl.append(timeBlockEl);
+rootEl.append(textAreaEl);
+rootEl.append(buttonEl);
+
+for (var i = 0; i < hours.length; i++) {
+  var hoursEl = $('<div>');
+
+  hoursEl.text(hours[i]);
+  console.log(hoursEl);
+}
+
+var currentDate = dayjs();
+$('#currentDay').text(currentDate.format('MMM D, YYYY'));
+console.log(currentDate);
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
