@@ -24,11 +24,11 @@ textAreaEl.addClass("col-8 col-md-10 description border-top: 1px solid white");
 textAreaEl.css('background', 'transparent','padding', '10px');
 buttonEl.addClass("col-2 col-md-1");
 buttonEl.css('border-left', '1px solid black');
+buttonEl.css('padding-top', '80px');
 buttonEl.css('border-top-right-radius', '15px');
 buttonEl.css('border-bottom-right-radius', '15px'); 
 buttonEl.css('background-color', '#06aed5'); 
 
-rootEl.append(timeBlockEl);
 rootEl.append(textAreaEl);
 rootEl.append(buttonEl);
 
@@ -36,7 +36,10 @@ for (var i = 0; i < hours.length; i++) {
   var hoursEl = $('<div>');
 
   hoursEl.text(hours[i]);
+  hoursEl.addClass('my-4');
   console.log(hoursEl);
+
+  rootEl.append(hoursEl);
 }
 
 var currentDate = dayjs();
