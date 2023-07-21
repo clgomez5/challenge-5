@@ -12,17 +12,33 @@ var hours = [
 ];
 
 var rootEl = $('#root');
+for (var i = 0; i < hours.length; i++) {
+  var hoursEl = $('<div>'); 
+}
+
+// {
+//   rootEl.html `
+//   <div id="hour-9" class="row time-block past">
+//         <div id="current-time" class="col-2 col-md-1 hour text-center py-3">9AM</div>
+//         <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+//         <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+//           <i class="fas fa-save" aria-hidden="true"></i>
+//         </button>
+//       </div>
+//   `
+
+  
 
 // var timeBlockEl = $('<div>'); 
 var textAreaEl = $('<textarea>');
-var buttonEl = $('<button>');
+// var buttonEl = $('<button>');
 
 // timeBlockEl.text(hours);
 
-// timeBlockEl.css('border-bottom-right-radius', '15px');
-// timeBlockEl.css('background-color', '#06aed5');
+// timeBlockEl.addClass('border-bottom-right-radius', '15px');
+// timeBlockEl.addClass('background-color', '#06aed5')
 // timeBlockEl.css('col-2 col-md-1 hour text-center py-3');
-// textAreaEl.addClass("col-8 col-md-10 description border-top: 1px solid white");
+// textAreaEl.css("col-8 col-md-10 description border-top: 1px solid white");
 // textAreaEl.css('background', 'transparent','padding', '10px');
 // buttonEl.addClass("col-2 col-md-1");
 // buttonEl.css('border-left', '1px solid black');
@@ -31,37 +47,34 @@ var buttonEl = $('<button>');
 // buttonEl.css('border-bottom-right-radius', '15px'); 
 // buttonEl.css('background-color', '#06aed5'); 
 
-rootEl.append(textAreaEl);
-rootEl.append(buttonEl);
+// rootEl.append(textAreaEl);
+// rootEl.append(buttonEl);
 
-for (var i = 0; i < hours.length; i++) {
-  var timeBlockEl = $('<div>');
 
-  timeBlockEl.text(hours[i]);
-  timeBlockEl.addClass('my-4');
-  timeBlockEl.addClass('textarea', 'col-8 col-md-10 description border-top: 1px solid white');
-  timeBlockEl.css("col-2 col-md-1");
-  timeBlockEl.css('border-left', '1px solid black');
-  timeBlockEl.css('padding-top', '80px');
-  timeBlockEl.css('border-top-right-radius', '15px');
-  timeBlockEl.css('border-bottom-right-radius', '15px'); 
-  timeBlockEl.addClass('button','background-color', '#06aed5');
-  timeBlockEl.css('col-2 col-md-1 hour text-center py-3');
-  timeBlockEl.css("col-8 col-md-10 description border-top: 1px solid white");
-  timeBlockEl.addClass('button','background', 'transparent','padding', '10px');
-  textAreaEl.addClass("col-8 col-md-10 description border-top: 1px solid white");
-  textAreaEl.css('background', 'transparent','padding', '10px'); 
-  buttonEl.addClass("col-2 col-md-1");
-buttonEl.css('border-left', '1px solid black');
-buttonEl.css('padding-top', '80px');
-buttonEl.css('border-top-right-radius', '15px');
-buttonEl.css('border-bottom-right-radius', '15px'); 
-buttonEl.css('background-color', '#06aed5'); 
+  var hoursEl = $('<div>');
 
-  console.log(timeBlockEl);
+  hoursEl.text(hours[i]);
+  hoursEl.addClass('my-4');
+  hoursEl.css("col-2 col-md-1");
+  hoursEl.css('border-left', '1px solid black');
+  hoursEl.css('padding-top', '80px');
+  hoursEl.css('border-top-right-radius', '15px');
+  hoursEl.css('border-bottom-right-radius', '15px'); 
+  hoursEl.addClass('button','background-color', '#06aed5');
+  hoursEl.css('col-2 col-md-1 hour text-center py-3');
+  hoursEl.addClass("textarea","col-8 col-md-10 description border-top: 1px solid white");
+  hoursEl.addClass('button','background', 'transparent','padding', '10px'); 
+  hoursEl.addClass('border-bottom-right-radius', '15px');
+  hoursEl.addClass('background-color', '#06aed5')
+  hoursEl.addClass('col-2 col-md-1 hour text-center py-3'); 
 
-  rootEl.append(timeBlockEl);
-}
+  console.log(hoursEl);
+
+  rootEl.append(hoursEl);
+
+  textAreaEl.append(hoursEl);
+
+
 
 var currentDate = dayjs();
 $('#currentDay').text(currentDate.format('MMM D, YYYY'));
